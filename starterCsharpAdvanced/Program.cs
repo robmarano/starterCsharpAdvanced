@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Security;
 
 namespace starterCsharpAdvanced
 {
@@ -12,12 +13,54 @@ namespace starterCsharpAdvanced
                 Console.WriteLine("Argument["+i+"] = "+args[i]);
                 try
                 {
-                    string text = System.IO.File.ReadAllText(args[i]);
+                    // see http://msdn.microsoft.com/en-us/library/ms143368(v=vs.110).aspx
+                    string text = File.ReadAllText(args[i]);
                     Console.WriteLine(text);
+                }
+                // The following exceptions are possibly thrown by File.ReadAllText()
+                catch (ArgumentNullException ex)
+                {
+                    Console.WriteLine(ex);
+                }
+                catch (ArgumentException ex)
+                {
+                    Console.WriteLine(ex);
+
+                }
+                catch (PathTooLongException ex)
+                {
+                    Console.WriteLine(ex);
+
+                }
+                catch (DirectoryNotFoundException ex)
+                {
+                    Console.WriteLine(ex);
+
+                }
+                catch (IOException ex)
+                {
+                    Console.WriteLine(ex);
+
+                }
+                catch (UnauthorizedAccessException ex)
+                {
+                    Console.WriteLine(ex);
+
+                }
+                catch (NotSupportedException ex)
+                {
+                    Console.WriteLine(ex);
+
+                }
+                catch (SecurityException ex)
+                {
+                    Console.WriteLine(ex);
+
                 }
                 catch (Exception ex)
                 {
-                    // Console.WriteLine(ex.ToString());n
+                    Console.WriteLine(ex);
+
                 }
             }
 
