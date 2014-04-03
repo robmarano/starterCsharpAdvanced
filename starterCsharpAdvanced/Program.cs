@@ -7,15 +7,16 @@ namespace starterCsharpAdvanced
     {
         static void Main()
         {
-            Thread t = new Thread(Print);
-            t.Start("Hello from t!");
-            Print("Hello from the Main line thread.");
+            Thread.CurrentThread.Name = "main";
+            Thread worker = new Thread(Go);
+            worker.Name = "worker";
+            worker.Start();
+            Go();
         }
 
-        static void Print(object messageObj)
+        static void Go()
         {
-            string message = (string)messageObj;   // We need to cast here
-            Console.WriteLine(message);
+            Console.WriteLine("Hello from " + Thread.CurrentThread.Name);
         }
     }
 }
