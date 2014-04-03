@@ -7,15 +7,13 @@ namespace starterCsharpAdvanced
     {
         static void Main()
         {
-            Thread t = new Thread(Go);    // No need to explicitly use ThreadStart
-
-            t.Start();   // Run Go() on the new thread.
-            Go();        // Simultaneously run Go() in the main thread.
+            Thread t = new Thread(() => Print("Hello from t!"));
+            t.Start();
         }
 
-        static void Go()
+        static void Print(string message)
         {
-            Console.WriteLine("hello!");
+            Console.WriteLine(message);
         }
     }
 }
