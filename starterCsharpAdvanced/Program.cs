@@ -5,16 +5,19 @@ namespace starterCsharpAdvanced
 {
     class Program
     {
+        bool done;
+
         static void Main()
         {
-            new Thread(Go).Start();      // Call Go() on a new thread
-            Go();                         // Call Go() on the main thread
+            Program tt = new Program();   // Create a common instance
+            new Thread(tt.Go).Start();
+            tt.Go();
         }
 
-        static void Go()
+        // Note that Go is now an instance method
+        void Go()
         {
-            // Declare and use a local variable - 'cycles'
-            for (int cycles = 0; cycles < 5; cycles++) Console.Write('?');
+            if (!done) { done = true; Console.WriteLine("Done"); }
         }
     }
 }
