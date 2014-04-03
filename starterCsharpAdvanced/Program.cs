@@ -5,17 +5,15 @@ namespace starterCsharpAdvanced
 {
     class Program
     {
-        bool done;
+        static bool done;    // Static fields are shared between all threads
 
         static void Main()
         {
-            Program tt = new Program();   // Create a common instance
-            new Thread(tt.Go).Start();
-            tt.Go();
+            new Thread(Go).Start();
+            Go();
         }
 
-        // Note that Go is now an instance method
-        void Go()
+        static void Go()
         {
             if (!done) { done = true; Console.WriteLine("Done"); }
         }
