@@ -8,6 +8,7 @@ namespace starterCsharpAdvanced
         static void Main()
         {
             Thread t = new Thread(() => Print("Hello from t!"));
+            Print("From Main thread");
             t.Start();
         }
 
