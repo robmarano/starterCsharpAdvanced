@@ -7,16 +7,14 @@ namespace starterCsharpAdvanced
     {
         static void Main()
         {
-            Thread t = new Thread(WriteY);          // Kick off a new thread
-            t.Start();                               // running WriteY()
-
-            // Simultaneously, do something on the main thread.
-            for (int i = 0; i < 1000; i++) Console.Write("x");
+            new Thread(Go).Start();      // Call Go() on a new thread
+            Go();                         // Call Go() on the main thread
         }
 
-        static void WriteY()
+        static void Go()
         {
-            for (int i = 0; i < 1000; i++) Console.Write("y");
+            // Declare and use a local variable - 'cycles'
+            for (int cycles = 0; cycles < 5; cycles++) Console.Write('?');
         }
     }
 }
