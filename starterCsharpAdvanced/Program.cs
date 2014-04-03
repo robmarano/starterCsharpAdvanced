@@ -5,21 +5,18 @@ namespace starterCsharpAdvanced
 {
     class Program
     {
-        static bool done;
-        static readonly object locker = new object();
-
         static void Main()
         {
-            new Thread(Go).Start();
+            Thread t = new Thread(Go);
+            t.Start();
             Go();
+            t.Join();
+            Console.WriteLine("Thread t has ended.");
         }
 
         static void Go()
         {
-            lock (locker)
-            {
-                if (!done) { Console.WriteLine("Done"); done = true; }
-            }
+            for (int i = 0; i < 1000; i++) Console.Write("y");
         }
     }
 }
