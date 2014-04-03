@@ -5,7 +5,8 @@ namespace starterCsharpAdvanced
 {
     class Program
     {
-        static bool done;    // Static fields are shared between all threads
+        static bool done;
+        static readonly object locker = new object();
 
         static void Main()
         {
@@ -15,7 +16,10 @@ namespace starterCsharpAdvanced
 
         static void Go()
         {
-            if (!done) { done = true; Console.WriteLine("Done"); }
+            lock (locker)
+            {
+                if (!done) { Console.WriteLine("Done"); done = true; }
+            }
         }
     }
 }
