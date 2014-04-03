@@ -10,6 +10,8 @@ namespace starterCsharpAdvanced
             Thread t = new Thread(Go);
             t.Start();
             Go();
+            Console.WriteLine("Main() thread has ended.");
+            Thread.Sleep(1500); // sleep for 1500 milliseconds
             t.Join();
             Console.WriteLine("Thread t has ended.");
         }
