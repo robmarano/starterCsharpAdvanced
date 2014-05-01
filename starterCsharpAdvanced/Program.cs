@@ -11,6 +11,7 @@ namespace starterCsharpAdvanced
     {
         static void Main(string[] args)
         {
+            ChatServer chatServer = new ChatServer();
         }
     }
 }
