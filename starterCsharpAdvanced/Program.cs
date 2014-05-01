@@ -11,13 +11,6 @@ namespace starterCsharpAdvanced
     {
         static void Main(string[] args)
         {
-            List<string> excelExtentions = new List<string>();
-            excelExtentions.Add("xls");
-            excelExtentions.Add("xlsx");
-            FileInventoryItem excelItem = new ExcelFileInventoryItem("Excel", excelExtentions);
-            Console.WriteLine(excelItem);
-
-
         }
     }
 }
