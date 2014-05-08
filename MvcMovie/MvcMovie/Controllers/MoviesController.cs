@@ -37,6 +37,8 @@ namespace MvcMovie.Controllers
         }
 
         // GET: /Movies/Create
+        [HttpGet] // by default
+        // action methods that are implicitly assigned the HttpGet attribute as HttpGet methods
         public ActionResult Create()
         {
             return View();
@@ -47,7 +49,15 @@ namespace MvcMovie.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="ID,Title,ReleaseDate,Genre,Price")] Movie movie)
+        /*
+        // The ValidateAntiForgeryToken attribute is used to prevent forgery of a request and is paired up
+        //with @Html.AntiForgeryToken() in the edit view file (Views\Movies\Edit.cshtml)
+        // The Bind attribute is another important security mechanism that keeps hackers from
+        // over-posting data to your model. You should only include properties in the bind attribute
+        // that you want to change. You can read about overposting and the bind attribute in
+        // http://go.microsoft.com/fwlink/?LinkId=317598
+        */
+        public ActionResult Create([Bind(Include = "ID,Title,ReleaseDate,Genre,Price")] Movie movie)
         {
             if (ModelState.IsValid)
             {
