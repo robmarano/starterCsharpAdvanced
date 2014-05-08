@@ -7,16 +7,23 @@ namespace MvcMovie.Controllers
     {
         // 
         // GET: /HelloWorld/ 
-        public string Index()
+        // The Index method above uses a view template to generate an HTML response to the browser.
+        // Controller methods (also known as action methods), such as the Index method above,
+        // generally return an ActionResult (or a class derived from ActionResult),
+        // not primitive types like string.
+        public ActionResult Index()
         {
-            return "This is my <b>default</b> action...";
+            return View();
         }
 
         // 
         // GET: /HelloWorld/Welcome/ 
-        public string Welcome(string name, int ID = 1)
+        public ActionResult Welcome(string name, int numTimes = 1)
         {
-            return HttpUtility.HtmlEncode("Hello " + name + ", ID: " + ID);
+            ViewBag.Message = "Hello " + name;
+            ViewBag.NumTimes = numTimes;
+
+            return View();
         }
     }
 }
