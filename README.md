@@ -7,6 +7,8 @@ Module 6
 
 Please read in your textbooks: Chapter 21 (Web App Development with ASP.NET).
 
+Read on MVC 5 at http://www.asp.net/mvc/tutorials/mvc-5/introduction/getting-started
+
 Also, since we will start learning Twitter Bootstrap to be a simple front-end to our web applications:
 
 http://getbootstrap.com/getting-started/
