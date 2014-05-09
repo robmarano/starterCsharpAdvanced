@@ -79,7 +79,7 @@ namespace MvcMovie.Controllers
         // that you want to change. You can read about overposting and the bind attribute in
         // http://go.microsoft.com/fwlink/?LinkId=317598
         */
-        public ActionResult Create([Bind(Include = "ID,Title,ReleaseDate,Genre,Price")] Movie movie)
+        public ActionResult Create([Bind(Include = "ID,Title,ReleaseDate,Genre,Price,Rating")] Movie movie)
         {
             if (ModelState.IsValid)
             {

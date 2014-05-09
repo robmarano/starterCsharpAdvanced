@@ -15,6 +15,11 @@ namespace MvcMovie.Models
         public DateTime ReleaseDate { get; set; }
         public string Genre { get; set; }
         public decimal Price { get; set; }
+        public string Rating { get; set; }
+        // Because you've added a new field to the Movie class, you also need
+        // to update the the binding white list so this new property will be included.
+        // Update the bind attribute for Create and Edit action methods to include the Rating property
+        // You also need to update the view templates in order to display, create and edit the new Rating property in the browser view
     }
 
     // The MovieDBContext class represents the Entity Framework movie database context,
