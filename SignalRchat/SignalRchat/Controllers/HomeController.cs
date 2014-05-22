@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace SignalRchat.Controllers
 {
+    [RequireHttps]
     public class HomeController : Controller
     {
         public ActionResult Index()
@@ -24,11 +25,6 @@ namespace SignalRchat.Controllers
         {
             ViewBag.Message = "Your contact page.";
 
-            return View();
-        }
-
-        public ActionResult Chat()
-        {
             return View();
         }
     }
