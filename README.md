@@ -3,18 +3,17 @@ starterCsharpAdvanced
 
 Starter app for learning basic and advanced C# development
 
-Module 6
+Module 7
 
-Please read in your textbooks: Chapter 21 (Web App Development with ASP.NET).
+Class,
 
-Read on MVC 5 at http://www.asp.net/mvc/tutorials/mvc-5/introduction/getting-started
+We will do the following real-time chat system using ASP.NET MVC5 and
+the new SignalR .NET library for real-time communications.
 
-Also, since we will start learning Twitter Bootstrap to be a simple front-end to our web applications:
+http://www.asp.net/signalr/overview/signalr-20/getting-started-with-signalr-20/tutorial-getting-started-with-signalr-20-and-mvc-5
 
-http://getbootstrap.com/getting-started/
+I will make that module 7 in our github.
 
-Homework:
-
-Implement a basic chat client and server using a web application back-end and Bootstrap-based client.
-
-Place your project in a new repo on your GitHub account.
+Let me know how you do! This is the basis of a very good application.
+Also, you can learn to put authentication on it too using this tutorial:
+http://www.asp.net/mvc/tutorials/mvc-5/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on
