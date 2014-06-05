@@ -9,11 +9,13 @@ namespace SignalRchat.Controllers
     [RequireHttps]
     public class HomeController : Controller
     {
+        [AllowAnonymous]
         public ActionResult Index()
         {
             return View();
         }
 
+        [AllowAnonymous]
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
@@ -21,6 +23,7 @@ namespace SignalRchat.Controllers
             return View();
         }
 
+        [AllowAnonymous]
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
@@ -28,6 +31,7 @@ namespace SignalRchat.Controllers
             return View();
         }
 
+        [Authorize(Roles = "canEdit")]
         public ActionResult Chat()
         {
             return View();
